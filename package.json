@@ -1,0 +1,28 @@
+{
+  "name": "htt-language",
+  "displayName": "HTT Templating Language Support",
+  "description": "Syntax highlighting for HTT files",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [{
+      "id": "htt",
+      "aliases": ["HTT", "htt"],
+      "extensions": [".htt"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "htt",
+      "scopeName": "source.htt",
+      "path": "./syntaxes/htt.tmLanguage.json"
+    }]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwdevantier/htt-vscode.git"
+  },
+  "publisher": "httlang"
+}
