@@ -6,7 +6,10 @@
       "include": "#lua-code-block"
     },
     {
-      "include": "#directive-line"
+      "include": "#component-begin"
+    },
+    {
+      "include": "#component-end"
     },
     {
       "include": "#lua-line"
@@ -23,22 +26,16 @@
   ],
   "repository": {
     "lua-code-block": {
-      "begin": "^(\\s*%\\s*)(@code)\\s*$",
+      "begin": "^(\\s*%%%)\\s*$",
       "beginCaptures": {
         "1": {
-          "name": "punctuation.definition.directive.htt"
-        },
-        "2": {
-          "name": "keyword.control.directive.htt"
+          "name": "punctuation.section.embedded.begin.htt"
         }
       },
-      "end": "^(\\s*%\\s*)(@end)\\s*$",
+      "end": "^(\\s*%%%)\\s*$",
       "endCaptures": {
         "1": {
-          "name": "punctuation.definition.directive.htt"
-        },
-        "2": {
-          "name": "keyword.control.directive.htt"
+          "name": "punctuation.section.embedded.begin.htt"
         }
       },
       "name": "meta.embedded.block.lua",
@@ -48,21 +45,37 @@
         }
       ]
     },
-    "directive-line": {
-      "match": "^(\\s*%\\s*)(@\\w+)\\s*(.*)",
+    "component-begin": {
+      "match": "^(\\s*%\\s*)(<)(\\w+)(>)",
       "captures": {
         "1": {
           "name": "punctuation.definition.directive.htt"
         },
         "2": {
-          "name": "keyword.control.directive.htt"
+          "name": "punctuation.definition.tag.begin.htt"
         },
         "3": {
-          "patterns": [
-            {
-              "include": "source.lua"
-            }
-          ]
+          "name": "entity.name.class.htt"
+        },
+        "4": {
+          "name": "punctuation.definition.tag.end.htt"
+        }
+      }
+    },
+    "component-end": {
+      "match": "^(\\s*%\\s*)(<\\/)(\\w+)(>)",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.directive.htt"
+        },
+        "2": {
+          "name": "punctuation.definition.tag.begin.htt"
+        },
+        "3": {
+          "name": "entity.name.class.htt"
+        },
+        "4": {
+          "name": "punctuation.definition.tag.end.htt"
         }
       }
     },
