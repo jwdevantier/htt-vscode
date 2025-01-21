@@ -2,7 +2,7 @@
   "name": "htt-language",
   "displayName": "HTT Templating Language Support",
   "description": "Syntax highlighting for HTT files",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "engines": {
     "vscode": "^1.60.0"
   },
